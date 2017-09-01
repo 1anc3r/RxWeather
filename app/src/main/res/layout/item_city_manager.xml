@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/city_card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="0dp"
+    app:cardElevation="5dp"
+    app:contentPadding="8dp"
+    tools:ignore="RtlHardcoded">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/item_tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/text_size_headline" />
+
+        <ImageView
+            android:id="@+id/weather_icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/content_description_default" />
+
+        <TextView
+            android:id="@+id/item_tv_publish_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_tv_weather"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/textColorDarkerGray"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/text_size_caption_small" />
+
+        <TextView
+            android:id="@+id/item_tv_weather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item_tv_city"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/text_size_body" />
+
+        <TextView
+            android:id="@+id/item_tv_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/item_tv_weather"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/item_tv_weather"
+            android:textAppearance="?attr/textAppearanceListItem"
+            android:textSize="@dimen/text_size_caption" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

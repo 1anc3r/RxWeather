@@ -1,0 +1,187 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:indicatorView="http://schemas.android.com/apk/res-auto"
+    xmlns:titleView="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.lancer.rxweather.view.fragment.HomePageFragment"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            app:cardElevation="1dp"
+            app:contentPadding="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <me.lancer.widget.TitleView
+                    android:id="@+id/detail_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    titleView:titleViewText="@string/title_detail_module" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/detail_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_title"
+                    tools:listitem="@layout/item_detail" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            app:cardElevation="1dp"
+            app:contentPadding="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <me.lancer.widget.TitleView
+                    android:id="@+id/forecast_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    titleView:titleViewText="@string/title_forecast_module" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/forecast_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/forecast_title"
+                    tools:listitem="@layout/item_forecast" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_aqi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            app:cardElevation="1dp"
+            app:contentPadding="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <me.lancer.widget.TitleView
+                    android:id="@+id/aqi_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    titleView:titleViewText="@string/title_aqi_module" />
+
+                <TextView
+                    android:id="@+id/tv_aqi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/aqi_title"
+                    android:includeFontPadding="false"
+                    android:textSize="46sp"
+                    tools:text="29" />
+
+                <TextView
+                    android:id="@+id/tv_quality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/tv_aqi"
+                    android:layout_toEndOf="@id/tv_aqi"
+                    android:layout_toRightOf="@id/tv_aqi"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/text_size_headline"
+                    tools:text="优" />
+
+                <me.lancer.widget.IndicatorView
+                    android:id="@+id/indicator_view_aqi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_aqi"
+                    android:layout_alignStart="@id/tv_aqi"
+                    android:layout_below="@id/tv_aqi"
+                    indicatorView:indicatorValue="0"
+                    indicatorView:intervalSize="0dp"
+                    indicatorView:marker="@drawable/ic_vector_indicator_down"
+                    indicatorView:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/tv_advice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@id/tv_aqi"
+                    android:layout_alignStart="@id/tv_aqi"
+                    android:layout_below="@id/indicator_view_aqi" />
+
+                <TextView
+                    android:id="@+id/tv_city_rank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tv_advice"
+                    android:layout_marginTop="4dp"
+                    android:textSize="@dimen/text_size_caption" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/index_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            app:cardElevation="1dp"
+            app:contentPadding="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <me.lancer.widget.TitleView
+                    android:id="@+id/index_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    titleView:titleViewText="@string/title_index_module" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/life_index_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/index_title"
+                    tools:listitem="@layout/item_life_index" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>
