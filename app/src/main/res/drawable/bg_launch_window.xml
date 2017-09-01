@@ -3,6 +3,8 @@
     android:opacity="opaque">
     <item android:drawable="@android:color/background_light" />
     <item
-        android:drawable="@drawable/ic_vector_weather"
+        android:drawable="@mipmap/ic_launcher"
+        android:height="96dp"
+        android:width="96dp"
         android:gravity="center" />
 </layer-list>

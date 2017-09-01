@@ -30,6 +30,8 @@ import me.lancer.rxweather.presenter.DrawerMenuPresenter;
 import me.lancer.rxweather.presenter.HomePagePresenter;
 import me.lancer.rxweather.view.fragment.DrawerMenuFragment;
 import me.lancer.rxweather.view.fragment.HomePageFragment;
+
+import com.bumptech.glide.Glide;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
@@ -59,7 +61,7 @@ public class MainActivity extends BaseActivity
 
     //基本天气信息
     @BindView(R.id.backdrop_image_view)
-    ImageView backdrop_image_view;
+    ImageView backdropImageView;
     @BindView(R.id.weather_icon_image_view)
     ImageView weatherIconImageView;
     @BindView(R.id.temp_text_view)
@@ -74,6 +76,11 @@ public class MainActivity extends BaseActivity
     DrawerMenuPresenter drawerMenuPresenter;
 
     private String currentCityId;
+    private String[] backdrops = {
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_spring.gif",
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_summer.gif",
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_winter.gif",
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +105,8 @@ public class MainActivity extends BaseActivity
         header.setPrimaryColors(this.getResources().getColor(R.color.colorPrimary), Color.WHITE);
         this.smartRefreshLayout.setRefreshHeader(header);
         this.smartRefreshLayout.setOnRefreshListener(refreshLayout -> homePagePresenter.loadWeather(currentCityId, true));
+
+        Glide.with(this).load(backdrops[(int) (Math.random() * 3)]).into(backdropImageView);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
