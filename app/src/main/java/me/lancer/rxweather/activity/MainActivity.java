@@ -77,9 +77,8 @@ public class MainActivity extends BaseActivity
 
     private String currentCityId;
     private String[] backdrops = {
-            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_spring.gif",
-            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_summer.gif",
-            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_winter.gif",
+            "https://raw.githubusercontent.com/1anc3r/Pocket/master/ic_night.png",
+            "https://raw.githubusercontent.com/1anc3r/Pocket/master/ic_day.png",
     };
 
     @Override
@@ -106,7 +105,7 @@ public class MainActivity extends BaseActivity
         this.smartRefreshLayout.setRefreshHeader(header);
         this.smartRefreshLayout.setOnRefreshListener(refreshLayout -> homePagePresenter.loadWeather(currentCityId, true));
 
-        Glide.with(this).load(backdrops[(int) (Math.random() * 3)]).into(backdropImageView);
+        Glide.with(this).load(backdrops[(int) (Math.random() * 2)]).into(backdropImageView);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,11 +13,32 @@
         android:layout_width="match_parent"
         android:layout_height="160dp" />
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardElevation="1dp"
+        tools:ignore="RtlHardcoded">
+
+        <Button
+            android:id="@+id/add_city_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:background="@null"
+            android:text="添加城市"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_size_body" />
+
+    </android.support.v7.widget.CardView>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_city_manager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="4dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
         tools:listitem="@layout/item_city_manager" />
 
 </LinearLayout>

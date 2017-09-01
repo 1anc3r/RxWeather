@@ -12,10 +12,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
 
 import me.lancer.library.fragment.BaseFragment;
 import me.lancer.rxweather.R;
-import me.lancer.rxweather.activity.MainActivity;
 import me.lancer.rxweather.activity.SelectCityActivity;
 import me.lancer.rxweather.contract.DrawerContract;
 import me.lancer.rxweather.model.db.entities.minimalist.Weather;
@@ -37,6 +39,8 @@ public class DrawerMenuFragment extends BaseFragment implements DrawerContract.V
     private static final String ARG_COLUMN_COUNT = "column-count";
 
 
+    @BindView(R.id.backdrop_image_view)
+    ImageView backdropImageView;
     @BindView(R.id.add_city_btn)
     Button addCityButton;
     @BindView(R.id.rv_city_manager)
@@ -51,6 +55,11 @@ public class DrawerMenuFragment extends BaseFragment implements DrawerContract.V
     private DrawerContract.Presenter presenter;
 
     private OnSelectCity onSelectCity;
+    private String[] backdrops = {
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_spring.gif",
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_summer.gif",
+            "https://raw.githubusercontent.com/1anc3r/RxWeather/master/art/ic_winter.gif",
+    };
 
     public DrawerMenuFragment() {
     }
@@ -95,6 +104,9 @@ public class DrawerMenuFragment extends BaseFragment implements DrawerContract.V
         } else {
             cityManagerRecyclerView.setLayoutManager(new GridLayoutManager(context, columnCount));
         }
+
+        Glide.with(this).load(backdrops[(int) (Math.random() * 3)]).into(backdropImageView);
+
         cityManagerRecyclerView.setItemAnimator(new DefaultItemAnimator());
         weatherList = new ArrayList<>();
         cityManagerAdapter = new CityManagerAdapter(weatherList);
