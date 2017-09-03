@@ -35,6 +35,9 @@ import com.bumptech.glide.Glide;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -77,8 +80,8 @@ public class MainActivity extends BaseActivity
 
     private String currentCityId;
     private String[] backdrops = {
-            "https://raw.githubusercontent.com/1anc3r/Pocket/master/ic_night.png",
             "https://raw.githubusercontent.com/1anc3r/Pocket/master/ic_day.png",
+            "https://raw.githubusercontent.com/1anc3r/Pocket/master/ic_night.png",
     };
 
     @Override
@@ -105,7 +108,13 @@ public class MainActivity extends BaseActivity
         this.smartRefreshLayout.setRefreshHeader(header);
         this.smartRefreshLayout.setOnRefreshListener(refreshLayout -> homePagePresenter.loadWeather(currentCityId, true));
 
-        Glide.with(this).load(backdrops[(int) (Math.random() * 2)]).into(backdropImageView);
+        SimpleDateFormat formatter = new SimpleDateFormat("HH");
+        int date = Integer.parseInt(formatter.format(new Date(System.currentTimeMillis())));
+        if (date > 6 && date < 18) {
+            Glide.with(this).load(backdrops[0]).into(backdropImageView);
+        } else {
+            Glide.with(this).load(backdrops[1]).into(backdropImageView);
+        }
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
