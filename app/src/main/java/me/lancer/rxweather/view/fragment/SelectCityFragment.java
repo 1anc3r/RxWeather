@@ -7,7 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import me.lancer.library.fragment.BaseFragment;
 import me.lancer.rxweather.R;
@@ -68,8 +67,15 @@ public class SelectCityFragment extends BaseFragment implements SelectCityContra
         cityListAdapter.setOnItemClickListener((parent, view, position, id) -> {
             try {
                 City selectedCity = cityListAdapter.mFilterData.get(position);
-                PreferenceHelper.savePreference(WeatherSettings.SETTINGS_CURRENT_CITY_ID, selectedCity.getCityId() + "");
-                Toast.makeText(this.getActivity(), selectedCity.getCityName(), Toast.LENGTH_LONG).show();
+                int cityId = selectedCity.getCityId();
+                if(!selectedCity.getCityName().equals(selectedCity.getParent())) {
+                    for (City city : cities) {
+                        if (selectedCity.getParent().equals(city.getCityName())) {
+                            cityId = city.getCityId();
+                        }
+                    }
+                }
+                PreferenceHelper.savePreference(WeatherSettings.SETTINGS_CURRENT_CITY_ID, cityId + "");
                 getActivity().finish();
             } catch (InvalidClassException e) {
                 e.printStackTrace();

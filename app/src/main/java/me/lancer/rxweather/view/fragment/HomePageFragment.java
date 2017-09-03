@@ -3,7 +3,8 @@ package me.lancer.rxweather.view.fragment;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,10 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import me.lancer.library.fragment.BaseFragment;
-import me.lancer.library.util.DateConvertUtils;
 import me.lancer.rxweather.R;
 import me.lancer.rxweather.contract.HomePageContract;
 import me.lancer.rxweather.model.db.entities.minimalist.AirQualityLive;
@@ -28,21 +27,18 @@ import me.lancer.rxweather.view.adapter.ForecastAdapter;
 import me.lancer.rxweather.view.adapter.LifeIndexAdapter;
 import me.lancer.rxweather.view.entity.WeatherDetail;
 import me.lancer.widget.IndicatorView;
-import com.scwang.smartrefresh.header.MaterialHeader;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class HomePageFragment extends BaseFragment implements HomePageContract.View {
 
+    @BindView(R.id.scroll_view)
+    NestedScrollView scrollView;
     //AQI
     @BindView(R.id.tv_aqi)
     TextView aqiTextView;
@@ -134,7 +130,7 @@ public class HomePageFragment extends BaseFragment implements HomePageContract.V
         lifeIndexRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 4));
         lifeIndices = new ArrayList<>();
         lifeIndexAdapter = new LifeIndexAdapter(getActivity(), lifeIndices);
-        lifeIndexAdapter.setOnItemClickListener((adapterView, view, i, l) -> Toast.makeText(HomePageFragment.this.getContext(), lifeIndices.get(i).getDetails(), Toast.LENGTH_LONG).show());
+        lifeIndexAdapter.setOnItemClickListener((adapterView, view, i, l) -> Snackbar.make(scrollView, lifeIndices.get(i).getDetails(), Snackbar.LENGTH_LONG).show());
         lifeIndexRecyclerView.setItemAnimator(new DefaultItemAnimator());
         lifeIndexRecyclerView.setAdapter(lifeIndexAdapter);
 
