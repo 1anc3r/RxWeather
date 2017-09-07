@@ -2,7 +2,7 @@
 <img src="https://github.com/1anc3r/RxWeather/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width = "96" height = "96" alt="icon"/>
 
 ## 应用界面
-<img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/.png" width = "288" height = "512" alt="" />
+<img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/1.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/2.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/3.png" width = "288" height = "512" alt="" />
 
 ## 关于
 ### 组织
