@@ -1,6 +1,4 @@
-
 package me.lancer.widget;
-
 
 import android.content.Context;
 import android.content.res.TypedArray;

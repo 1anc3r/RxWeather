@@ -44,8 +44,10 @@ android {
 
         release {
             buildConfigField("boolean", "LOG_DEBUG", "false")
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'debuggable false
+            shrinkResources true
+            zipAlignEnabled true
             buildConfigField 'me.lancer.library.util.StethoHelper', 'STETHO', 'new me.lancer.rxweather.util.stetho.ReleaseStethoHelper()'
         }
     }
