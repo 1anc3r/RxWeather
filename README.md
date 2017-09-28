@@ -1,4 +1,4 @@
-# 天气(RxWeather)
+# 看天气(RxWeather)
 <img src="https://github.com/1anc3r/RxWeather/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" width = "96" height = "96" alt="icon"/>
 
 ## 应用界面
