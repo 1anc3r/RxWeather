@@ -5,7 +5,7 @@
 [点我下载](http://fir.im/rxweather)
 
 ## 应用界面
-<img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/1.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/2.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/screenshot/3.png" width = "288" height = "512" alt="" />
+<img src="https://github.com/1anc3r/RxWeather/blob/master/art/1.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/art/2.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/art/3.png" width = "288" height = "512" alt="" />
 
 ## 关于
 ### 组织
