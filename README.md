@@ -11,4 +11,4 @@
 * 应用下载链接: [![](https://img.shields.io/badge/download-v1.1-blue.svg)](https://github.com/1anc3r/RxWeather/blob/master/app/app-release.apk?raw=true)
 
 ## 应用界面
-<img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/1.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/2.png" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/3.png" width = "288" height = "512" alt="" />
+<img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/1.png?raw=true" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/2.png?raw=true" width = "288" height = "512" alt="" /><img src="https://github.com/1anc3r/RxWeather/blob/master/Screenshots/3.png?raw=true" width = "288" height = "512" alt="" />
